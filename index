@@ -1,0 +1,45 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+import java.util.Scanner;
+
+public class OrigamiFortuneTeller {
+    public static void main(String[] args) {
+        origamiFortune();
+    }
+
+    public static void origamiFortune() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Welcome to the Origami Fortune Teller!");
+        System.out.println("Answer these questions and I'll reveal your fortune!\n");
+
+        List<String> questions = new ArrayList<>();
+        questions.add("Pick a color (Red, Blue, Green, Yellow): ");
+        questions.add("Choose a number (1, 2, 3, 4): ");
+        questions.add("What is your favorite animal (Dog, Cat, Rabbit, Turtle): ");
+        questions.add("Pick a weather you like (Sunny, Rainy, Cloudy, Snowy): ");
+        questions.add("What do you prefer (Tea or Coffee?): ");
+
+        List<String> answers = new ArrayList<>();
+        for (String question : questions) {
+            System.out.print(question);
+            String answer = scanner.nextLine();
+            answers.add(answer);
+        }
+
+        List<String> fortunes = new ArrayList<>();
+        fortunes.add("You will find a dollar on the ground, but only if you wear mismatched socks tomorrow!");
+        fortunes.add("Your smile is powerful! You might make a stranger's day without even knowing it.");
+        fortunes.add("Beware of pigeons. They may have secret plans for world domination.");
+        fortunes.add("You will have a very lucky day tomorrow, as long as you sing in the shower tonight.");
+        fortunes.add("A surprise awaits you at the next left turn, so take all right turns today!");
+        fortunes.add("You will meet someone interesting soon, but they may try to sell you a vacuum cleaner.");
+        fortunes.add("The answer you seek is in the cookie jar, just don't get caught!");
+
+        Random random = new Random();
+        String selectedFortune = fortunes.get(random.nextInt(fortunes.size()));
+
+        System.out.println("\nBased on your choices, here's your fortune:\n");
+        System.out.println("*** " + selectedFortune + " ***");
+    }
+}
