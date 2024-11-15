@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Origami Fortune Teller</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            text-align: center;
+            padding: 50px;
+        }
+        .fortune {
+            font-weight: bold;
+            color: #ff6347;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Origami Fortune Teller!</h1>
+    <p>Answer the questions below, and I'll reveal your fortune!</p>
+
+    <form id="fortuneForm">
+        <label>Pick a color:</label>
+        <select id="color">
+            <option value="Red">Red</option>
+            <option value="Blue">Blue</option>
+            <option value="Green">Green</option>
+            <option value="Yellow">Yellow</option>
+        </select>
+        <br><br>
+
+        <label>Choose a number:</label>
+        <select id="number">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+        <br><br>
+
+        <label>What is your favorite animal:</label>
+        <select id="animal">
+            <option value="Dog">Dog</option>
+            <option value="Cat">Cat</option>
+            <option value="Rabbit">Rabbit</option>
+            <option value="Turtle">Turtle</option>
+        </select>
+        <br><br>
+
+        <label>Pick a weather you like:</label>
+        <select id="weather">
+            <option value="Sunny">Sunny</option>
+            <option value="Rainy">Rainy</option>
+            <option value="Cloudy">Cloudy</option>
+            <option value="Snowy">Snowy</option>
+        </select>
+        <br><br>
+
+        <label>What do you prefer:</label>
+        <select id="preference">
+            <option value="Tea">Tea</option>
+            <option value="Coffee">Coffee</option>
+        </select>
+        <br><br>
+
+        <button type="button" onclick="tellFortune()">Get Your Fortune!</button>
+    </form>
+
+    <p class="fortune" id="fortuneResult"></p>
+
+    <script>
+        function tellFortune() {
+            const fortunes = [
+                "You will find a dollar on the ground, but only if you wear mismatched socks tomorrow!",
+                "Your smile is powerful! You might make a stranger's day without even knowing it.",
+                "Beware of pigeons. They may have secret plans for world domination.",
+                "You will have a very lucky day tomorrow, as long as you sing in the shower tonight.",
+                "A surprise awaits you at the next left turn, so take all right turns today!",
+                "You will meet someone interesting soon, but they may try to sell you a vacuum cleaner.",
+                "The answer you seek is in the cookie jar, just don't get caught!"
+            ];
+
+            const randomIndex = Math.floor(Math.random() * fortunes.length);
+            const selectedFortune = fortunes[randomIndex];
+
+            document.getElementById("fortuneResult").textContent = "*** " + selectedFortune + " ***";
+        }
+    </script>
+</body>
+</html>
