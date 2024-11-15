@@ -1,0 +1,35 @@
+import random
+
+def origami_fortune():
+    print("Welcome to the Origami Fortune Teller!")
+    print("Answer these questions and I'll reveal your fortune!\n")
+
+    questions = [
+        "Pick a color (Red, Blue, Green, Yellow): ",
+        "Choose a number (1, 2, 3, 4): ",
+        "What is your favorite animal (Dog, Cat, Rabbit, Turtle): ",
+        "Pick a weather you like (Sunny, Rainy, Cloudy, Snowy): ",
+        "What do you prefer (Tea or Coffee?): "
+    ]
+
+    answers = []
+    for question in questions:
+        answer = input(question)
+        answers.append(answer)
+
+    fortunes = [
+        "You will find a dollar on the ground, but only if you wear mismatched socks tomorrow!",
+        "Your smile is powerful! You might make a stranger's day without even knowing it.",
+        "Beware of pigeons. They may have secret plans for world domination.",
+        "You will have a very lucky day tomorrow, as long as you sing in the shower tonight.",
+        "A surprise awaits you at the next left turn, so take all right turns today!",
+        "You will meet someone interesting soon, but they may try to sell you a vacuum cleaner.",
+        "The answer you seek is in the cookie jar, just don't get caught!"
+    ]
+
+    selected_fortune = random.choice(fortunes)
+    print("\nBased on your choices, here's your fortune:\n")
+    print(f"*** {selected_fortune} ***")
+
+if __name__ == "__main__":
+    origami_fortune()
