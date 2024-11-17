@@ -19,7 +19,7 @@
     </style>
 </head>
 <body>
-    <h1>Welcome to the Origami Fortune Teller!</h1>
+    <h1>Welcome to the Origami Fortune TellerV - Version 1, the origonal and the best!</h1>
     <p>Answer the questions below, and I'll reveal your fortune!</p>
 
     <form id="fortuneForm">
